@@ -1,0 +1,6 @@
+pet_project_dbt/
+venv/
+logs/
+*.txt
+!requirements.txt
+.env
