@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Переходим в директорию проекта
+cd $MY_PROJECT_PATH
+
 # Загрузка переменных окружения из файла .env
 if [ -f .env ]; then
   export $(grep -v '^#' .env | xargs)
@@ -12,9 +15,6 @@ CHAT_ID=$CHAT_ID
 
 # Название проекта
 SCRIPT_NAME="yandex_mertica"
-
-# Переходим в директорию проекта
-cd /home/evgenij/pet_project/
 
 # Запоминаем время начала
 START_TIME=$(date +%s)
