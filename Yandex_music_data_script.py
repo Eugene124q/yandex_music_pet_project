@@ -609,6 +609,22 @@ similar_artists.columns = similar_artists.columns.str.replace('.', '_', regex=Fa
 similar_artists.rename(columns = {'id' : 'similar_artist_id'}, inplace=True)
 
 
+# In[116]:
+
+
+similar_artists_useful_columns = ['artist_id', 'similar_artist_id', 'error', 'reason', 'name', 'various',
+       'composer', 'genres', 'og_image', 'op_image', 'no_pictures_from_search',
+       'available', 'ratings', 'links', 'tickets_available', 'likes_count',
+       'popular_tracks', 'regions', 'decomposed', 'full_names',
+       'hand_made_description', 'description', 'countries',
+       'en_wikipedia_link', 'db_aliases', 'aliases', 'init_date', 'end_date',
+       'ya_money_id', 'cover_type', 'cover_uri', 'cover_items_uri',
+       'cover_dir', 'cover_version', 'cover_custom', 'cover_is_custom',
+       'cover_copyright_name', 'cover_copyright_cline', 'cover_prefix',
+       'cover_error', 'counts_tracks', 'counts_direct_albums',
+       'counts_also_albums', 'counts_also_tracks']
+
+
 # # DataFrame с ПОХОЖИМИ ИСПОЛНИТЕЛЯМИ
 
 # In[84]:
@@ -842,16 +858,16 @@ popular_tracks.to_sql('popular_tracks', engine, if_exists='append', index = Fals
 
 # ### similar_artists
 
-# In[114]:
+# In[117]:
 
 
 with engine.connect() as conn:
     conn.execute(text('TRUNCATE similar_artists;'))
     conn.commit()
-similar_artists.to_sql('similar_artists', engine, if_exists='append', index = False)
+similar_artists[similar_artists_useful_columns].to_sql('similar_artists', engine, if_exists='append', index = False)
 
 
-# In[115]:
+# In[ ]:
 
 
 print('Конец работы скрипта')
