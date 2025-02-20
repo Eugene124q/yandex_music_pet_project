@@ -4,4 +4,3 @@ logs/
 *.txt
 !requirements.txt
 .env
-Images/
