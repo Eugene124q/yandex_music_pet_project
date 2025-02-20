@@ -32,7 +32,7 @@
 
 - Оповещение в **Telegram** о успешном/неуспешном запуске скриптов/dbt-тестов
 
-![Reference Image](/home/evgenij/pet_project/Images/screenshot_alert.png)
+![Reference Image](/Images/screenshot_alert.png)
 
 ### Использование dbt для моделирования данных
 
@@ -41,7 +41,7 @@
 
 ### Документация dbt
 
-![Reference Image](/home/evgenij/pet_project/Images/screenshot_dbt_docs.png)
+![Reference Image](/Images/screenshot_dbt_docs.png)
 
 - Полная документация для dbt-моделей и данных доступна [здесь](https://eugene124q.github.io/pet_project_dbt/)
 
@@ -93,14 +93,14 @@
 
 Для обработки этой ошибки в **Bash-скрипт** была добавлена логика повторных попыток выполнения с заданным интервалом, при помощи цикла **WHILE**. В случае ошибки происходит повторный запуск **Python-скрипта** до **MAX_RETRIES** раз, а при каждом сбое отправляется уведомление в Telegram. Если после всех попыток скрипт так и не завершился успешно, пользователь получает финальное уведомление о сбое
 
-![Reference Image](/home/evgenij/pet_project/Images/screenshot_bash.png)
+![Reference Image](/Images/screenshot_bash.png)
 
 ### Проблема сделать отчет **Superset** публичным
 
 ### Альбом/релиз стал недоступен в сервисе Яндекс.Музыка
-![Reference Image](/home/evgenij/pet_project/Images/screenshot_page_not_found.png)
+![Reference Image](/Images/screenshot_page_not_found.png)
 Иногда некоторые альбомы/релизы исполнителей, отмеченных как "Мне нравится" в Яндекс.Музыке, могут становиться недоступными (удалены или скрыты в сервисе). Для этого случая был написаны dbt тесты (в том числе, проверка отсуствия id альбома/релиза в таблице-источнике). В такой ситуации, при очередном автоматическом запуске проекта, возникают ошибки dbt тестов.
-![Reference Image](/home/evgenij/pet_project/Images/dbt_tests_error.png)
+![Reference Image](/Images/dbt_tests_error.png)
  Проблема обусловлена особенностями работы Яндекс.Музыки и может возникать спонтанно.
 
 На данный момент, решением этого случая является ручная корректировка данных или обновление списка исполнителей.
