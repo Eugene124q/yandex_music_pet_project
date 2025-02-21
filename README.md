@@ -44,6 +44,7 @@
 ![Reference Image](/Images/screenshot_dbt_docs.png)
 
 - Полная документация для dbt-моделей и данных доступна [здесь](https://eugene124q.github.io/pet_project_dbt/)
+- [ссылка на репозиторий](https://github.com/Eugene124q/pet_project_dbt/)
 
 # 🔄 Этапы работы над проектом
 
